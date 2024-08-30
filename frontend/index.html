@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclamações</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon-192x192.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <h1>Endereços</h1>
+        <form id="enderecoForm">
+            <input type="text" id="rua" placeholder="Rua" required>
+            <input type="text" id="numero" placeholder="Número" required>
+            <input type="text" id="bairro" placeholder="Bairro" required>
+            <input type="text" id="cidade" placeholder="Cidade" required>
+            <button type="submit">Enviar Endereço</button>
+        </form>
+        <ul id="enderecosList"></ul>
+    </div>
+    <script src="js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(() => console.log('Service Worker registrado com sucesso.'))
+            .catch((error) => console.log('Falha ao registrar o Service Worker:', error));
+        }
+    </script>
+</body>
+</html>
